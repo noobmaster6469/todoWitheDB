@@ -1,0 +1,69 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.home h1 {
+  margin-bottom: 20px;
+}
+
+.createForm {
+  margin-bottom: 20px;
+}
+
+.createForm input {
+  width: 500px;
+  padding: 10px;
+  border-bottom: 2px solid;
+  outline: none;
+  font-size: larger;
+}
+
+.createForm button {
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: larger;
+  transition: all 0.2s ease;
+}
+
+.createForm button:active {
+  transform: scaleY(0.9);
+}
+
+.todolists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 560px;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 28px;
+  overflow: hidden;
+}
+
+.todolists input {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.todolists img {
+  cursor: pointer;
+}
+
+.todolists img:active {
+  scale: 0.9;
+}
+
+.checkbox {
+  overflow: hidden;
+  display: flex;
+  width: 90%;
+}
