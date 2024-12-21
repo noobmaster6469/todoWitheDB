@@ -13,7 +13,7 @@ const Create = () => {
     axios
       .post("http://localhost:3000/add", { task: task })
       .then((res) => {
-        console.log(res);
+        location.reload();
       })
       .catch((err) => console.log(err));
   };

@@ -15,6 +15,23 @@ const Home = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleClick = (id) => {
+    axios
+      .put("http://localhost:3000/update/" + id)
+      .then((res) => {
+        location.reload();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleDelete = (id) => {
+    axios
+      .delete("http://localhost:3000/delete/" + id)
+      .then((res) => {
+        location.reload();
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="home">
       <h1>Todo List</h1>
@@ -27,11 +44,33 @@ const Home = () => {
           todos.map((todo, index) => {
             return (
               <div className="todolists" key={index}>
-                <div className="checkbox">
-                  <input type="checkbox" name="check" id="check" />
-                  <p>{todo.task}</p>
+                <div
+                  className="checkbox"
+                  onClick={() => {
+                    handleClick(todo._id);
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    name="check"
+                    id="check"
+                    checked={todo.done}
+                  />
+                  <p
+                    style={{
+                      textDecoration: todo.done ? "line-through" : "none",
+                    }}
+                  >
+                    {todo.task}
+                  </p>
                 </div>
-                <img src="../../public/delete.svg" alt="delete" />
+                <img
+                  src="../../public/delete.svg"
+                  alt="delete"
+                  onClick={() => {
+                    handleDelete(todo._id);
+                  }}
+                />
               </div>
             );
           })
